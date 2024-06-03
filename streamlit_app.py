@@ -2,6 +2,8 @@
 import streamlit as st
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
+import requests
+
 
 
 # Write directly to the app
@@ -42,4 +44,7 @@ if ingredients_List:
         st.error("Ingredients van not be more than 5")
 
 # st.write(my_insert_stmt)
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
     
